@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Itask, Levels } from 'src/app/models/interfaces/Task.interface';
 
 @Component({
   selector: 'app-task-list',
@@ -6,6 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
+
+  // TODO: Reformular como una lista de tareas
+  task1: Itask = {
+    title: 'task 1',
+    description: 'Description 1',
+    completed: false,
+    level: Levels.Info
+  }
+
+  task2: Itask = {
+    title: 'task 2',
+    description: 'Description 2',
+    completed: true,
+    level: Levels.Urgent
+  }
 
   constructor() { }
 
