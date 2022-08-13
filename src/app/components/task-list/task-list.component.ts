@@ -28,4 +28,8 @@ export class TaskListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteTaks(task: Itask){
+    // TODO: sustituir alert x splice la lista de tareas
+    alert(`Se procede a eliminar la tarea ${task.title}`)
+  }
 }

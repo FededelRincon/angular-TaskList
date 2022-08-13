@@ -1,5 +1,5 @@
 <h4>Tus tareas: </h4>
 
 <!-- TODO: reutilizar con directivas estructurales -->
-<app-task [task]="task1" ></app-task>
-<app-task [task]="task2" ></app-task>
+<app-task [task]="task1" (delete)="deleteTaks($event)" ></app-task>
+<app-task [task]="task2" (delete)="deleteTaks($event)" ></app-task>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Itask } from 'src/app/models/interfaces/Task.interface';
 
 @Component({
@@ -11,6 +11,7 @@ import { Itask } from 'src/app/models/interfaces/Task.interface';
 export class TaskComponent implements OnInit {
 
   @Input() task: Itask | undefined ;
+  @Output() delete: EventEmitter<Itask> = new EventEmitter<Itask>;
 
   constructor() { }
 
@@ -18,7 +19,8 @@ export class TaskComponent implements OnInit {
   }
 
   deleteTask(){
-    console.log('Eliminar una tarea', this.task?.title)
+    // Notificamos al componente superior la tarea a borrar
+    this.delete.emit(this.task)
   }
 
 }
